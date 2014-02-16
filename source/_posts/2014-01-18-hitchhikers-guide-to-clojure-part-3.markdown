@@ -2,6 +2,7 @@
 layout: post
 title: "Hitchhiker's Guide to Clojure - Part 3"
 date: 2014-02-01 13:48
+comments: false
 ---
 
 Amy and Frank fled down the stairs from her office and met an

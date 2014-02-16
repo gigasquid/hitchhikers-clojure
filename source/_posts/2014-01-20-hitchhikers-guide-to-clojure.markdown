@@ -2,6 +2,7 @@
 layout: post
 title: "Hitchhiker's Guide to Clojure"
 date: 2014-02-03 19:33
+comments: false
 ---
 {% img http://farm6.staticflickr.com/5480/12258585125_36e8fdee1e.jpg %}
 
