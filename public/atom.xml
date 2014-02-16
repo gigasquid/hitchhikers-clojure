@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Hitchhiker's Guide to Clojure]]></title>
+  <link href="http://gigasquid.github.io/hitchhikers-clojure/atom.xml" rel="self"/>
+  <link href="http://gigasquid.github.io/hitchhikers-clojure/"/>
+  <updated>2014-02-16T14:23:50-05:00</updated>
+  <id>http://gigasquid.github.io/hitchhikers-clojure/</id>
+  <author>
+    <name><![CDATA[Gigasquid]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hitchhiker's Guide to Clojure]]></title>
+    <link href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure/"/>
+    <updated>2014-02-03T19:33:00-05:00</updated>
+    <id>http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure</id>
+    <content type="html"><![CDATA[<p><img src="http://farm6.staticflickr.com/5480/12258585125_36e8fdee1e.jpg"></p>
+
+<p><em>The following is a cautionary example of the unpredictable
+combination of Clojure, a marathon viewing of the BBC&rsquo;s series &ldquo;The
+Hitchhiker&rsquo;s Guide to the Galaxy&rdquo;, and a questionable amount of
+cheese.</em></p>
+
+<p>There have been many tourism guides to the
+<a href="http://clojure.org/">Clojure</a> programming language.  Some that easily
+come to mind for their intellectual erudition and prose are &ldquo;The Joy
+of Touring Clojure&rdquo;, &ldquo;Touring Clojure&rdquo;, &ldquo;Clojure Touring&rdquo;, and the
+newest edition of &ldquo;Touring Clojure Touring&rdquo;.  However, none has
+surpassed the wild popularity of &ldquo;The Hitchhiker&rsquo;s Guide to Clojure&rdquo;.
+It has sold over 500 million copies and has been on the &ldquo;BigInt&rsquo;s
+Board of Programming Language Tourism&rdquo; for the past 15 years. While,
+arguably, it
+lacked the in-depth coverage of the other guides, it made up for it in
+useful practical tips, such as what to do if you find a nil in your
+pistachio.  Most of all, the cover had the following words printed in
+very large letters: <strong>Don&rsquo;t Worry About the Parens</strong>.</p>
+
+<p>To tell the story of the book, it is best to tell the story of two
+people whose lives were affected by it: Amy Denn, one of the last
+remaining <a href="http://en.wikipedia.org/wiki/Pascal_(programming_language">Pascal</a> developers in Cincinnati, and Frank Pecan, a time
+traveler, guidebook reseacher, and friend of Amy.</p>
+
+<p>Amy, at this moment, was completely unaware of the chronological
+advantages of her friend, being preoccupied with the stark fact that
+she was about to be fired.  She had been given a direct order from her
+CEO to deploy the code at 3:05pm.  It was now 3:00pm and she had
+realized that if she did so, all the data painstaking collected about
+the effects of
+<a href="http://en.wikipedia.org/wiki/Tuvan_throat_singing">Throat Singing</a> on
+the growth rate of tomatoes would be erased. Unfortunately, the CEO
+did not really understand or trust anything having to do with
+technology or programming.  In truth, the only two things that he
+seemed to care about were tomatoes and checklists of unreasonable
+things. The fact that no course of action available to her in the next
+5 minutes would help her employment situation, agitated Amy so much
+that she was violently shelling and eating pistachio nuts.</p>
+
+<p><img src="http://farm4.staticflickr.com/3331/3659226924_fbf336379e_n.jpg"></p>
+
+<p>The &ldquo;Hitchhiker&rsquo;s Guide to Clojure&rdquo; says that
+<em>pistachios are Nature&rsquo;s
+most perfect <a href="http://en.wikipedia.org/wiki/S-expression">s-expression</a>. An
+s-expression is recursively composed of s-expressions or an atom.
+In the case of the humble pistachio, the atom is the nut inside. The
+atom simply evaluates to itself.  This is best seen is an example
+where the following expressions are evaluated in the Clojure
+<a href="http://tryclj.com/">REPL</a></em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="s">&quot;hi&quot;</span> <span class="c1">;;=&gt; &quot;hi&quot;</span>
+</span><span class='line'><span class="mi">1</span> <span class="c1">;;=&gt; 1</span>
+</span><span class='line'><span class="nv">true</span> <span class="c1">;;=&gt; true</span>
+</span><span class='line'><span class="nv">nil</span> <span class="c1">;;=&gt; nil</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>`</p>
+
+<p><em>Which leads to the very practical tip of what to do if you find a nil
+in your pistachio.  The answer, of course, is to be thankful that you
+have a value that represents the absence of a value &ndash; and to get
+another pistachio.</em></p>
+
+<p><em>In Clojure, a s-expression is written with parens.  The first element
+within the parens is an operator or function and the rest of the
+elements are treated as data, some of which can be s-expression
+themselves.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">;;=&gt; 3</span>
+</span><span class='line'><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">2</span><span class="p">))</span> <span class="c1">;;=&gt; 5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Considering the pistachio again, we can think of the nut in the shell
+as an s-expression, (providing we also imagine an operator or function
+right in front of the nut).</em></p>
+
+<p><em>Here we define a function that will turn the nut red, by appending the
+string &ldquo;red&rdquo; to the nut-name.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">red</span> <span class="p">[</span><span class="nv">nut</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">str </span><span class="s">&quot;red &quot;</span> <span class="nv">nut</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">)</span> <span class="c1">;;=&gt; &quot;red nut1&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Notice that if we put a quote in front of the expression, it will no
+longer be evaluated.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="o">&#39;</span><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">)</span> <span class="c1">;;=&gt; (red &quot;nut1&quot;)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>quoting the expression turns it into a list, which we can then
+manipulate with other s-expressions (code as data).</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">first </span><span class="o">&#39;</span><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">))</span> <span class="c1">;;=&gt; red</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nb">last </span><span class="o">&#39;</span><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">))</span> <span class="c1">;;=&gt; &quot;nut1&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>If we try to evaluate the s-expression with just the nut name in the
+parens, we get an error because there is no function in
+the first slot.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="s">&quot;nut1&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;=&gt; ClassCastException java.lang.String cannot be cast to clojure.lang.IFn</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>The whole thing of having to have a function in front of the nut in
+the pistachio has invited much heated debate on the suitability of
+pistachios being held up as the paragon of an s-expression.  But
+critics have failed to explain the corroborating evidence of red
+pistachio nuts, or find a more suitable nut.</em></p>
+
+<p>Amy&rsquo;s time traveling friend, Frank, is due to appear on the scene
+momentarily to reveal that the whole world is really made of Clojure
+<a href="http://www.datomic.com/">Datomic</a> datoms.  Furthermore, a transaction
+is going to be evaluated soon, which will retract all the facts on
+EVERYTHING. The practical effect of this will be that nothing will
+have an attributes. A world without any attributes at all would be
+quite boring and, for all purposes, be non-existent. Luckily for Amy, Frank is a Datomic Time
+Traveller and has a hand-held &ldquo;evaluator&rdquo; which will save them. Also
+luckily, the readers will be spared dialog, since the author
+can never figure out where to put the punctuation and is really
+rubbish at it.  Only one phrase will be illustrated.  This is the
+rather important one, having been uttered by Amy after it was explained to her
+that she, and the entire world around her, was entirely composed of
+Clojure:</p>
+
+<p>&ldquo;Isn&rsquo;t that the language with a lot of parens?&rdquo;</p>
+
+<p>To which, Frank handed her the &ldquo;Hitchhiker&rsquo;s Guide to Clojure&rdquo; and
+pointed to the words on the front cover,  <strong>&ldquo;Don&rsquo;t Worry About the
+Parens.&rdquo;</strong>, and turned to the first page.</p>
+
+<p><em>&ldquo;There is absolutely no need to worry about the parens. It is known
+ today that the first really important discovery of humankind was not
+ fire, but <a href="http://www.emacswiki.org/emacs/ParEdit">Paredit</a>.  Paredit
+ mode magically acts to insert and balance the right parens to the
+ point where they actually can no longer be seen.  This is evident by
+ just looking around you. The world is made of Clojure and there are
+ millions, billions, and trillions of parens all around you and your
+ tea cup right now.  Yet, you don&rsquo;t see them.  Paredit mode.&rdquo;</em></p>
+
+<p>At the urging of Frank, Amy quickly stuffed the remaining pistachios
+in her pockets while he readied his evaluator. The display showed
+some large integer value, that decreased as he pushed the buttons on
+the console.  Finally, he pushed the large red button and two parens
+started glowing on either side of them &hellip; and they disappeared.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hitchhiker's Guide to Clojure - Part 2]]></title>
+    <link href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-2/"/>
+    <updated>2014-02-02T21:20:00-05:00</updated>
+    <id>http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-2</id>
+    <content type="html"><![CDATA[<p>Amy and Frank were hurtled quite rapidly through time and space after
+attaching themselves to a transaction headed through the
+<a href="http://docs.datomic.com/transactions.html">Datomic Transactor</a>. From
+there things slowed down a bit, then took a sharp left and
+ricocheted off again with incredible speed until they landed in another
+<a href="http://docs.datomic.com/architecture.html">Datomic Peer</a>, and finally
+appeared in the same room.  Amy was quite startled by the
+anti-climatic nature of the whole dematerializing and rematerializing
+in the same exact spot, and didn&rsquo;t really know what to do next.  She
+surveyed her office and found it exactly the same,
+except for two distinct details.  For one, the pistachio shells had
+disappeared, and for another, the date on the computer showed
+yesterday at 8:00 am.  She tried to connect these facts rationally
+with the pistachios in her pocket and finally said,</p>
+
+<p>&ldquo;I am about to come into work.&rdquo;</p>
+
+<p>Frank, who was busily hunting through his blue zippered pack around
+his waist, looked up briefly.</p>
+
+<p>&ldquo;Well, we better get out of here then, I only have a blue fanny pack.&rdquo;</p>
+
+<p><img src="http://img.rakuten.com/PIC/37504308/0/1/500/37504308.jpg"></p>
+
+<p><em>The Hitchhiker&rsquo;s Guide to Clojure explains that the &ldquo;fanny pack&rdquo;, or
+&ldquo;bum bag&rdquo;, is the symbol of a licensed Chrono-agent.  The rank of the
+Chrono-agent can be clearly determined by its color on the ROYGBIV
+scale.</em></p>
+
+<p><em>The origins of this licensing method can be traced to an embarrassing
+incident in human history known as &ldquo;The Great Flood&rdquo;. A junior
+Chrono-agent was trying to increase the yield of a tomato crop during
+a dry spell and was trying to do the following recursive function in his evaluator:</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">rain</span> <span class="p">[</span><span class="nv">days</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">pos? </span><span class="nv">days</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Rain: &quot;</span> <span class="nv">days</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">rain</span> <span class="p">(</span><span class="nb">dec </span><span class="nv">days</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">rain</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;Output</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 4</span>
+</span><span class='line'><span class="c1">;;  Rain: 3</span>
+</span><span class='line'><span class="c1">;;  Rain: 2</span>
+</span><span class='line'><span class="c1">;;  Rain: 1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Unfortunately, he made the rookie mistake of forgetting to decrement
+the days before passing it to the recursive function.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">dec </span><span class="mi">5</span><span class="p">)</span> <span class="c1">;=&gt; 4</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>The result of which was severely overwatered tomatoes.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">rain</span> <span class="p">[</span><span class="nv">days</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">pos? </span><span class="nv">days</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Rain: &quot;</span> <span class="nv">days</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">rain</span> <span class="nv">days</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">rain</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  ...(you get the idea)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>It is interesting to note that he could he written the same function with a
+<a href="http://clojuredocs.org/clojure_core/clojure.core/recur">recur</a> instead.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">rain</span> <span class="p">[</span><span class="nv">days</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">pos? </span><span class="nv">days</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Rain: &quot;</span> <span class="nv">days</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">recur</span> <span class="nv">days</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">rain</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;Output</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>That would have had the nice effect of not consuming the stack, (which
+is fabulous for constructing those lovely fibonacci sea shells for beach
+vacations), but without decrementing the parameter in the recursive
+call, it wouldn&rsquo;t have really helped.</em></p>
+
+<p><em>A senior Chrono-agent was dispatched to sort out the mess.  By the
+time he got there and stopped the rain, there was not much left to
+work with. Thankfully, he was quite versed in lazy and infinite
+aspects of Clojure. For instance, take this vector of 2 chickens:</em></p>
+
+<p><img src="http://farm4.staticflickr.com/3352/3556879530_089814192c_m.jpg"></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>It can be transformed into an infinite lazy list of chickens by using
+<a href="http://clojuredocs.org/clojure_core/clojure.core/cycle">cycle</a>.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">cycle </span><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>What really set the senior Chrono-agent apart from his junior
+colleague, was that he did not put the infinite sequence in the
+evaluator. If he had, there would have been another embarrassing
+incident in human history, this time involving an over-abundance of poultry. Instead, he used
+<a href="http://clojuredocs.org/clojure_contrib/clojure.contrib.str-utils2/take">take</a>
+to get the first n infinite chickens.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">take </span><span class="mi">5</span> <span class="p">(</span><span class="nb">cycle </span><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">]))</span>
+</span><span class='line'><span class="c1">;;=&gt; (:hen :rooster :hen :rooster :hen)</span>
+</span><span class='line'><span class="p">(</span><span class="nb">take </span><span class="mi">10</span> <span class="p">(</span><span class="nb">cycle </span><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">]))</span>
+</span><span class='line'><span class="c1">;;=&gt; (:hen :rooster :hen :rooster :hen :rooster :hen :rooster :hen</span>
+</span><span class='line'><span class="ss">:rooster</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>After that, the council of Chrono-agents, decided to license evaluator
+use. Low-level recursion requires the 2nd highest indigo level rank.
+The highest violet rank, of course, belonging only to the
+<a href="http://clojure.org/macros">Macro</a> Masters. All lower levels are
+required to stick to the safer, higher level abstractions like
+<a href="http://clojuredocs.org/clojure_core/clojure.core/for">for</a>,
+<a href="http://clojuredocs.org/clojure_core/clojure.core/map">map</a>, or
+<a href="http://clojuredocs.org/clojure_core/clojure.core/reduce">reduce</a>.</em></p>
+
+<p>Amy was still watching Frank busily rumaging through his pack in the
+office . Finally
+he found what he
+was looking for, his hand emerging triumphantly with a fistful of
+mini-marshmallows.</p>
+
+<p>&ldquo;Got it. Come on, let&rsquo;s go! Someone is trying to destroy the world and
+we need to see the otters.&rdquo;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hitchhiker's Guide to Clojure - Part 3]]></title>
+    <link href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-3/"/>
+    <updated>2014-02-01T13:48:00-05:00</updated>
+    <id>http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-3</id>
+    <content type="html"><![CDATA[<p>Amy and Frank fled down the stairs from her office and met an
+unexpected obstacle to their exit, a locked door.  As
+they peered out the window, they saw yesterday&rsquo;s Amy pull up in the
+parking space, get out, retrieve her laptop, and start to head in
+the front door.</p>
+
+<p>&ldquo;Oh good, we can take your car&rdquo;, said Frank.</p>
+
+<p>Amy took a second to recover from the shock of seeing what her hair really
+looked like from behind and then asked, &ldquo;But, how can we get to it?
+The door is locked, and we
+can&rsquo;t go back up to the office&hellip; I would meet myself.&rdquo;</p>
+
+<p>Frank smiled, pulled out the <em>Hitchhiker&rsquo;s Guide to Clojure</em> and
+pulled up a page with the heading <em>Locked Doors and Other Small
+Bothers</em>.</p>
+
+<p><img src="http://farm4.staticflickr.com/3346/3191331375_a773bff1b7_n.jpg"></p>
+
+<p><em>One of the reasons for the surprising success of <strong>The Hitchhiker&rsquo;s Guide
+to Clojure</strong> is helpful advice of on an assortment of practical
+matters.</em></p>
+
+<p><em>Locked doors are a common nuisance in modern times.  Fortunately,
+Clojure provides a very handy function for such occasions, <a href="http://clojuredocs.org/clojure_core/1.2.0/clojure.core/fnil">fnil</a>.
+This commonly overlooked function, takes an existing function and
+returns a new function that allows you to specify a default
+for a nil parameter. For example, take this locked door:</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">locked-door</span> <span class="p">[</span><span class="nv">key</span><span class="p">]</span>
+</span><span class='line'>        <span class="p">(</span><span class="k">if </span><span class="nb">key </span><span class="s">&quot;open&quot;</span> <span class="s">&quot;nope - staying shut&quot;</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">locked-door</span> <span class="ss">:key</span><span class="p">)</span> <span class="c1">;=&gt; &quot;open&quot;</span>
+</span><span class='line'><span class="p">(</span><span class="nf">locked-door</span> <span class="nv">nil</span><span class="p">)</span> <span class="c1">;=&gt; &quot;nope - staying shut&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>In this case, the simple application of fnil will help remove this
+pesky obstacle.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">this-door</span> <span class="p">(</span><span class="nf">fnil</span> <span class="nv">locked-door</span> <span class="ss">:another-key-that-works</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">this-door</span> <span class="ss">:key</span><span class="p">)</span> <span class="c1">;=&gt; &quot;open&quot;</span>
+</span><span class='line'><span class="p">(</span><span class="nf">this-door</span> <span class="nv">nil</span><span class="p">)</span> <span class="c1">;=&gt; open</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Please be advised, that some doors are locked for a good reason. It
+is left to the user&rsquo;s discretion. But it is highly recommended in Norway&rsquo;s
+moose regions, to think twice.</em></p>
+
+<p>They unlocked the door and headed for Amy&rsquo;s car.  She couldn&rsquo;t decide
+whether she was surprised or not to find her keys in her pocket, so
+she gave up and just got in instead.  After a short drive, they
+arrived at the zoo and navigated their way through various
+school groups and arrive at the Aquarium.</p>
+
+<p>Amy at this point, having prided herself on her adaptable nature, was
+still having trouble processing the latest events. She had
+discovered that Frank was a Datomic time traveller,  the  world was
+made of Clojure, and it was also about to be destroyed in a short
+future that she just came from.  Her rational brain, (which was
+currently working way too hard), was quite
+relieved to be distracted by the sight of two really adorable otters.  They were floating
+contentedly around the pool, occasionally stopping to crack an Abalone
+shell on their fuzzy tummies.</p>
+
+<p><img src="http://cdn.zmescience.com/wp-content/uploads/2012/09/sea-otters.jpg"></p>
+
+<p>Her rational brain, after having a nice breather, finally re-asserted
+itself and made Amy ask Frank:</p>
+
+<p>&ldquo;Why are we here?&rdquo;</p>
+
+<p>&ldquo;Otters are the front-line Chrono-guards, of course.&rdquo;</p>
+
+<p>He went on to explain that otters are tasked with the important job of
+keeping a close watch on human civilization and making critical, minor
+adjustments to keep things on an even track.  All those nature videos
+of otters cracking shells with rocks?  They are really evaluating
+Clojure expressions crucial to our way of life. Most of the time, they
+prefer to do their work remote.  They find floating on their backs in
+the peaceful waters the most productive work environment.  However,
+sometimes they will construct zoos or aquariums, when their work
+requires them to keep a closer watch on some areas.  In times of great
+need, they might even take a human form for a short while.  Recently,
+one of their agents was inadvertently
+<a href="https://i.chzbgr.com/maxW500/6003866624/h0B1E03BF/">exposed</a> and
+required a few extra Abalone shells to straighten out.</p>
+
+<p>Frank opened his pack and handed his evaluator to Amy to hold
+while fished out four mini-marshmallows.  He gave two to Amy and then
+proceeded to put one in his ear and the other in his mouth.  More
+remarkably still, he appeared to be speaking with the otters.</p>
+
+<p><em>Mini-marshmallows are the best way to create portable Clojure
+<a href="https://github.com/clojure/core.async">core.async</a> channels that
+won&rsquo;t melt in your hands.</em></p>
+
+<p><em>To construct a channel simply use <em>chan</em></em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">talk-to-otters-chan</span> <span class="p">(</span><span class="nf">chan</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Channels by default are unbuffered, which keeps them at the
+mini-marshmallow size.  It requires a rendezvous of a channel producer
+and consumer to communicate.  In the case of otters, someone to talk to
+the otters and the otters, themselves, to listen. Be advised that with
+a regular blocking put <strong>>!!</strong>, the main thread will be blocked.
+That is, if you try to speak to the otter, you will be stuck there
+until it gets around to listening. This isn&rsquo;t the best case for the talker if the
+otter was busy, so one approach would be to use a
+<a href="http://clojuredocs.org/clojure_core/clojure.core/future">future</a> to
+talk to the otter with a blocking put <em>>!!</em>.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">future</span> <span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Hello otters.&quot;</span><span class="p">))</span> <span class="c1">;=&gt;#&lt;Future@3c371c41: :pending&gt;</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&lt;!!</span> <span class="nv">talk-to-otters-chan</span><span class="p">)</span> <span class="c1">;=&gt; &quot;Hello otters.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>One could also use a buffered channel, but that increases the size of
+the marshmallow.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">talk-to-otters-chan</span> <span class="p">(</span><span class="nf">chan</span> <span class="mi">10</span><span class="p">))</span> <span class="c1">;;create channel with buffer size 10</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Hello otters.&quot;</span><span class="p">)</span> <span class="c1">;=&gt; nil</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Do you know anything about the world ending?&quot;</span><span class="p">)</span> <span class="c1">;=&gt; nil</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">&lt;!!</span> <span class="nv">talk-to-otters-chan</span><span class="p">)</span> <span class="c1">;=&gt; &quot;Hello otters.&quot;</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&lt;!!</span> <span class="nv">talk-to-otters-chan</span><span class="p">)</span> <span class="c1">;=&gt; &quot;Do you know anything about the world ending?&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>The best way to conserve space and time is to use asynchronous
+communication with <em>go</em> blocks that wont&#8217; block the threads. Inside
+these go blocks one can use regular non-blocking puts <strong>>!</strong> and gets
+<strong>&lt;!</strong>.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">talk-to-otters-chan</span> <span class="p">(</span><span class="nf">chan</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">go</span> <span class="p">(</span><span class="nf">while</span> <span class="nv">true</span>
+</span><span class='line'>      <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nf">&lt;!</span> <span class="nv">talk-to-otters-chan</span><span class="p">))))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Hello otters&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Do you know anything about the world ending?&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Also, you are really fuzzy and cute.&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">;; (This prints out in the REPL as you talk to the otters)</span>
+</span><span class='line'><span class="nv">Hello</span> <span class="nv">otters</span>
+</span><span class='line'><span class="nv">Do</span> <span class="nv">you</span> <span class="nv">know</span> <span class="nv">anything</span> <span class="nv">about</span> <span class="nv">the</span> <span class="nv">world</span> <span class="nv">ending?</span>
+</span><span class='line'><span class="nv">Also</span>, <span class="nv">you</span> <span class="nv">are</span> <span class="nv">really</span> <span class="nv">fuzzy</span> <span class="nb">and </span><span class="nv">cute.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>This compact, lightweight, and asynchronous method of communication is
+well suited to conversations and messaging of all sorts, including
+conversing with human, animals, and other Clojure-based life forms.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">talk-chan</span> <span class="p">(</span><span class="nf">chan</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">listen-chan</span> <span class="p">(</span><span class="nf">chan</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">go</span> <span class="p">(</span><span class="nf">while</span> <span class="nv">true</span>
+</span><span class='line'>      <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nf">&lt;!</span> <span class="nv">listen-chan</span><span class="p">))))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">go</span> <span class="p">(</span><span class="nf">while</span> <span class="nv">true</span>
+</span><span class='line'>      <span class="p">(</span><span class="nf">&gt;!</span> <span class="nv">listen-chan</span>
+</span><span class='line'>          <span class="p">(</span><span class="nb">str </span><span class="s">&quot;You said: &quot;</span><span class="p">(</span><span class="nf">&lt;!</span> <span class="nv">talk-chan</span><span class="p">)</span>
+</span><span class='line'>                <span class="s">&quot; &quot;</span> <span class="s">&quot;Do you have any Abalone?&quot;</span> <span class="p">))))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Hello otters&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Do you know anything about the world ending?&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Also, you are really fuzzy and cute.&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">;; (This prints out in the REPL as you talk to the otters)</span>
+</span><span class='line'><span class="nv">You</span> <span class="nv">said</span><span class="err">:</span> <span class="nv">Hello</span> <span class="nv">otters</span> <span class="nv">Do</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">any</span> <span class="nv">Abalone?</span>
+</span><span class='line'><span class="nv">You</span> <span class="nv">said</span><span class="err">:</span> <span class="nv">Do</span> <span class="nv">you</span> <span class="nv">know</span> <span class="nv">anything</span> <span class="nv">about</span> <span class="nv">the</span> <span class="nv">world</span> <span class="nv">ending?</span> <span class="nv">Do</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">any</span> <span class="nv">Abalone?</span>
+</span><span class='line'><span class="nv">You</span> <span class="nv">said</span><span class="err">:</span> <span class="nv">Also</span>, <span class="nv">you</span> <span class="nv">are</span> <span class="nv">really</span> <span class="nv">fuzzy</span> <span class="nb">and </span><span class="nv">cute.</span> <span class="nv">Do</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">any</span> <span class="nv">Abalone?</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Amy put one of the mini-marshmallows in her ear.  She immediately
+began to hear the conversation that Frank was having with the otters.</p>
+
+<p>&ldquo;But who would want to destroy the entire world?  That is really kinda
+over-board.&rdquo;</p>
+
+<p>&ldquo;I don&rsquo;t really know, but there was someone on Galactic Hacker News
+the other day that was quite tiffed over the idea that Clojure was considered
+a Lisp.&rdquo;</p>
+
+<p>Amy reached to put the other marshmallow in her mouth to ask a very
+important question.  But unfortunately, as she moved her hand, she
+accidentally pushed the big red <em>Source</em> button on the evaluator.
+Suddenly, she and Frank were swept up in a vortex that spun them
+around and sucked them down into the ground.</p>
+]]></content>
+  </entry>
+  
+</feed>

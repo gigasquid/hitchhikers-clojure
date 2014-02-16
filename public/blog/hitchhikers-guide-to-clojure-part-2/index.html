@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hitchhiker's Guide to Clojure - Part 2 - Hitchhiker's Guide to Clojure</title>
+  <meta name="author" content="Gigasquid">
+
+  
+  <meta name="description" content="Amy and Frank were hurtled quite rapidly through time and space after
+attaching themselves to a transaction headed through the
+Datomic Transactor. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hitchhiker's Guide to Clojure" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hitchhiker's Guide to Clojure</a></h1>
+  
+    <h2>Don't Worry About the Parens</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:gigasquid.github.io/hitchhikers-clojure" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">The Hitchhiker's Clojure</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hitchhiker's Guide to Clojure - Part 2</h1>
+    
+    
+      <p class="meta">
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Amy and Frank were hurtled quite rapidly through time and space after
+attaching themselves to a transaction headed through the
+<a href="http://docs.datomic.com/transactions.html">Datomic Transactor</a>. From
+there things slowed down a bit, then took a sharp left and
+ricocheted off again with incredible speed until they landed in another
+<a href="http://docs.datomic.com/architecture.html">Datomic Peer</a>, and finally
+appeared in the same room.  Amy was quite startled by the
+anti-climatic nature of the whole dematerializing and rematerializing
+in the same exact spot, and didn&rsquo;t really know what to do next.  She
+surveyed her office and found it exactly the same,
+except for two distinct details.  For one, the pistachio shells had
+disappeared, and for another, the date on the computer showed
+yesterday at 8:00 am.  She tried to connect these facts rationally
+with the pistachios in her pocket and finally said,</p>
+
+<p>&ldquo;I am about to come into work.&rdquo;</p>
+
+<p>Frank, who was busily hunting through his blue zippered pack around
+his waist, looked up briefly.</p>
+
+<p>&ldquo;Well, we better get out of here then, I only have a blue fanny pack.&rdquo;</p>
+
+<p><img src="http://img.rakuten.com/PIC/37504308/0/1/500/37504308.jpg"></p>
+
+<p><em>The Hitchhiker&rsquo;s Guide to Clojure explains that the &ldquo;fanny pack&rdquo;, or
+&ldquo;bum bag&rdquo;, is the symbol of a licensed Chrono-agent.  The rank of the
+Chrono-agent can be clearly determined by its color on the ROYGBIV
+scale.</em></p>
+
+<p><em>The origins of this licensing method can be traced to an embarrassing
+incident in human history known as &ldquo;The Great Flood&rdquo;. A junior
+Chrono-agent was trying to increase the yield of a tomato crop during
+a dry spell and was trying to do the following recursive function in his evaluator:</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">rain</span> <span class="p">[</span><span class="nv">days</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">pos? </span><span class="nv">days</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Rain: &quot;</span> <span class="nv">days</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">rain</span> <span class="p">(</span><span class="nb">dec </span><span class="nv">days</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">rain</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;Output</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 4</span>
+</span><span class='line'><span class="c1">;;  Rain: 3</span>
+</span><span class='line'><span class="c1">;;  Rain: 2</span>
+</span><span class='line'><span class="c1">;;  Rain: 1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Unfortunately, he made the rookie mistake of forgetting to decrement
+the days before passing it to the recursive function.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">dec </span><span class="mi">5</span><span class="p">)</span> <span class="c1">;=&gt; 4</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>The result of which was severely overwatered tomatoes.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">rain</span> <span class="p">[</span><span class="nv">days</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">pos? </span><span class="nv">days</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Rain: &quot;</span> <span class="nv">days</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">rain</span> <span class="nv">days</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">rain</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  ...(you get the idea)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>It is interesting to note that he could he written the same function with a
+<a href="http://clojuredocs.org/clojure_core/clojure.core/recur">recur</a> instead.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">rain</span> <span class="p">[</span><span class="nv">days</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">pos? </span><span class="nv">days</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Rain: &quot;</span> <span class="nv">days</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">recur</span> <span class="nv">days</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">rain</span> <span class="mi">5</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;Output</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span><span class='line'><span class="c1">;;  Rain: 5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>That would have had the nice effect of not consuming the stack, (which
+is fabulous for constructing those lovely fibonacci sea shells for beach
+vacations), but without decrementing the parameter in the recursive
+call, it wouldn&rsquo;t have really helped.</em></p>
+
+<p><em>A senior Chrono-agent was dispatched to sort out the mess.  By the
+time he got there and stopped the rain, there was not much left to
+work with. Thankfully, he was quite versed in lazy and infinite
+aspects of Clojure. For instance, take this vector of 2 chickens:</em></p>
+
+<p><img src="http://farm4.staticflickr.com/3352/3556879530_089814192c_m.jpg"></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>It can be transformed into an infinite lazy list of chickens by using
+<a href="http://clojuredocs.org/clojure_core/clojure.core/cycle">cycle</a>.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">cycle </span><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>What really set the senior Chrono-agent apart from his junior
+colleague, was that he did not put the infinite sequence in the
+evaluator. If he had, there would have been another embarrassing
+incident in human history, this time involving an over-abundance of poultry. Instead, he used
+<a href="http://clojuredocs.org/clojure_contrib/clojure.contrib.str-utils2/take">take</a>
+to get the first n infinite chickens.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">take </span><span class="mi">5</span> <span class="p">(</span><span class="nb">cycle </span><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">]))</span>
+</span><span class='line'><span class="c1">;;=&gt; (:hen :rooster :hen :rooster :hen)</span>
+</span><span class='line'><span class="p">(</span><span class="nb">take </span><span class="mi">10</span> <span class="p">(</span><span class="nb">cycle </span><span class="p">[</span><span class="ss">:hen</span> <span class="ss">:rooster</span><span class="p">]))</span>
+</span><span class='line'><span class="c1">;;=&gt; (:hen :rooster :hen :rooster :hen :rooster :hen :rooster :hen</span>
+</span><span class='line'><span class="ss">:rooster</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>After that, the council of Chrono-agents, decided to license evaluator
+use. Low-level recursion requires the 2nd highest indigo level rank.
+The highest violet rank, of course, belonging only to the
+<a href="http://clojure.org/macros">Macro</a> Masters. All lower levels are
+required to stick to the safer, higher level abstractions like
+<a href="http://clojuredocs.org/clojure_core/clojure.core/for">for</a>,
+<a href="http://clojuredocs.org/clojure_core/clojure.core/map">map</a>, or
+<a href="http://clojuredocs.org/clojure_core/clojure.core/reduce">reduce</a>.</em></p>
+
+<p>Amy was still watching Frank busily rumaging through his pack in the
+office . Finally
+he found what he
+was looking for, his hand emerging triumphantly with a fistful of
+mini-marshmallows.</p>
+
+<p>&ldquo;Got it. Come on, let&rsquo;s go! Someone is trying to destroy the world and
+we need to see the otters.&rdquo;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Gigasquid</span></span>
+
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/hitchhikers-guide-to-clojure-part-3/" title="Previous Post: Hitchhiker's Guide to Clojure - Part 3">&laquo; Hitchhiker's Guide to Clojure - Part 3</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/hitchhikers-guide-to-clojure/" title="Next Post: Hitchhiker's Guide to Clojure">Hitchhiker's Guide to Clojure &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Chapters</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/hitchhikers-guide-to-clojure/">Hitchhiker's Guide to Clojure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/hitchhikers-guide-to-clojure-part-2/">Hitchhiker's Guide to Clojure - Part 2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/hitchhikers-guide-to-clojure-part-3/">Hitchhiker's Guide to Clojure - Part 3</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Gigasquid -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

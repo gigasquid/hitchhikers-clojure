@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hitchhiker's Guide to Clojure - Hitchhiker's Guide to Clojure</title>
+  <meta name="author" content="Gigasquid">
+
+  
+  <meta name="description" content="The following is a cautionary example of the unpredictable
+combination of Clojure, a marathon viewing of the BBC&rsquo;s series &ldquo;The &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Hitchhiker's Guide to Clojure" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Hitchhiker's Guide to Clojure</a></h1>
+  
+    <h2>Don't Worry About the Parens</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:gigasquid.github.io/hitchhikers-clojure" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">The Hitchhiker's Clojure</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about/">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hitchhiker's Guide to Clojure</h1>
+    
+    
+      <p class="meta">
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="http://farm6.staticflickr.com/5480/12258585125_36e8fdee1e.jpg"></p>
+
+<p><em>The following is a cautionary example of the unpredictable
+combination of Clojure, a marathon viewing of the BBC&rsquo;s series &ldquo;The
+Hitchhiker&rsquo;s Guide to the Galaxy&rdquo;, and a questionable amount of
+cheese.</em></p>
+
+<p>There have been many tourism guides to the
+<a href="http://clojure.org/">Clojure</a> programming language.  Some that easily
+come to mind for their intellectual erudition and prose are &ldquo;The Joy
+of Touring Clojure&rdquo;, &ldquo;Touring Clojure&rdquo;, &ldquo;Clojure Touring&rdquo;, and the
+newest edition of &ldquo;Touring Clojure Touring&rdquo;.  However, none has
+surpassed the wild popularity of &ldquo;The Hitchhiker&rsquo;s Guide to Clojure&rdquo;.
+It has sold over 500 million copies and has been on the &ldquo;BigInt&rsquo;s
+Board of Programming Language Tourism&rdquo; for the past 15 years. While,
+arguably, it
+lacked the in-depth coverage of the other guides, it made up for it in
+useful practical tips, such as what to do if you find a nil in your
+pistachio.  Most of all, the cover had the following words printed in
+very large letters: <strong>Don&rsquo;t Worry About the Parens</strong>.</p>
+
+<p>To tell the story of the book, it is best to tell the story of two
+people whose lives were affected by it: Amy Denn, one of the last
+remaining <a href="http://en.wikipedia.org/wiki/Pascal_(programming_language">Pascal</a> developers in Cincinnati, and Frank Pecan, a time
+traveler, guidebook reseacher, and friend of Amy.</p>
+
+<p>Amy, at this moment, was completely unaware of the chronological
+advantages of her friend, being preoccupied with the stark fact that
+she was about to be fired.  She had been given a direct order from her
+CEO to deploy the code at 3:05pm.  It was now 3:00pm and she had
+realized that if she did so, all the data painstaking collected about
+the effects of
+<a href="http://en.wikipedia.org/wiki/Tuvan_throat_singing">Throat Singing</a> on
+the growth rate of tomatoes would be erased. Unfortunately, the CEO
+did not really understand or trust anything having to do with
+technology or programming.  In truth, the only two things that he
+seemed to care about were tomatoes and checklists of unreasonable
+things. The fact that no course of action available to her in the next
+5 minutes would help her employment situation, agitated Amy so much
+that she was violently shelling and eating pistachio nuts.</p>
+
+<p><img src="http://farm4.staticflickr.com/3331/3659226924_fbf336379e_n.jpg"></p>
+
+<p>The &ldquo;Hitchhiker&rsquo;s Guide to Clojure&rdquo; says that
+<em>pistachios are Nature&rsquo;s
+most perfect <a href="http://en.wikipedia.org/wiki/S-expression">s-expression</a>. An
+s-expression is recursively composed of s-expressions or an atom.
+In the case of the humble pistachio, the atom is the nut inside. The
+atom simply evaluates to itself.  This is best seen is an example
+where the following expressions are evaluated in the Clojure
+<a href="http://tryclj.com/">REPL</a></em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="s">&quot;hi&quot;</span> <span class="c1">;;=&gt; &quot;hi&quot;</span>
+</span><span class='line'><span class="mi">1</span> <span class="c1">;;=&gt; 1</span>
+</span><span class='line'><span class="nv">true</span> <span class="c1">;;=&gt; true</span>
+</span><span class='line'><span class="nv">nil</span> <span class="c1">;;=&gt; nil</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>`</p>
+
+<p><em>Which leads to the very practical tip of what to do if you find a nil
+in your pistachio.  The answer, of course, is to be thankful that you
+have a value that represents the absence of a value &ndash; and to get
+another pistachio.</em></p>
+
+<p><em>In Clojure, a s-expression is written with parens.  The first element
+within the parens is an operator or function and the rest of the
+elements are treated as data, some of which can be s-expression
+themselves.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">;;=&gt; 3</span>
+</span><span class='line'><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">2</span><span class="p">))</span> <span class="c1">;;=&gt; 5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Considering the pistachio again, we can think of the nut in the shell
+as an s-expression, (providing we also imagine an operator or function
+right in front of the nut).</em></p>
+
+<p><em>Here we define a function that will turn the nut red, by appending the
+string &ldquo;red&rdquo; to the nut-name.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">red</span> <span class="p">[</span><span class="nv">nut</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">str </span><span class="s">&quot;red &quot;</span> <span class="nv">nut</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">)</span> <span class="c1">;;=&gt; &quot;red nut1&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>Notice that if we put a quote in front of the expression, it will no
+longer be evaluated.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="o">&#39;</span><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">)</span> <span class="c1">;;=&gt; (red &quot;nut1&quot;)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>quoting the expression turns it into a list, which we can then
+manipulate with other s-expressions (code as data).</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">first </span><span class="o">&#39;</span><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">))</span> <span class="c1">;;=&gt; red</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="nb">last </span><span class="o">&#39;</span><span class="p">(</span><span class="nf">red</span> <span class="s">&quot;nut1&quot;</span><span class="p">))</span> <span class="c1">;;=&gt; &quot;nut1&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>If we try to evaluate the s-expression with just the nut name in the
+parens, we get an error because there is no function in
+the first slot.</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="s">&quot;nut1&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="c1">;;=&gt; ClassCastException java.lang.String cannot be cast to clojure.lang.IFn</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>The whole thing of having to have a function in front of the nut in
+the pistachio has invited much heated debate on the suitability of
+pistachios being held up as the paragon of an s-expression.  But
+critics have failed to explain the corroborating evidence of red
+pistachio nuts, or find a more suitable nut.</em></p>
+
+<p>Amy&rsquo;s time traveling friend, Frank, is due to appear on the scene
+momentarily to reveal that the whole world is really made of Clojure
+<a href="http://www.datomic.com/">Datomic</a> datoms.  Furthermore, a transaction
+is going to be evaluated soon, which will retract all the facts on
+EVERYTHING. The practical effect of this will be that nothing will
+have an attributes. A world without any attributes at all would be
+quite boring and, for all purposes, be non-existent. Luckily for Amy, Frank is a Datomic Time
+Traveller and has a hand-held &ldquo;evaluator&rdquo; which will save them. Also
+luckily, the readers will be spared dialog, since the author
+can never figure out where to put the punctuation and is really
+rubbish at it.  Only one phrase will be illustrated.  This is the
+rather important one, having been uttered by Amy after it was explained to her
+that she, and the entire world around her, was entirely composed of
+Clojure:</p>
+
+<p>&ldquo;Isn&rsquo;t that the language with a lot of parens?&rdquo;</p>
+
+<p>To which, Frank handed her the &ldquo;Hitchhiker&rsquo;s Guide to Clojure&rdquo; and
+pointed to the words on the front cover,  <strong>&ldquo;Don&rsquo;t Worry About the
+Parens.&rdquo;</strong>, and turned to the first page.</p>
+
+<p><em>&ldquo;There is absolutely no need to worry about the parens. It is known
+ today that the first really important discovery of humankind was not
+ fire, but <a href="http://www.emacswiki.org/emacs/ParEdit">Paredit</a>.  Paredit
+ mode magically acts to insert and balance the right parens to the
+ point where they actually can no longer be seen.  This is evident by
+ just looking around you. The world is made of Clojure and there are
+ millions, billions, and trillions of parens all around you and your
+ tea cup right now.  Yet, you don&rsquo;t see them.  Paredit mode.&rdquo;</em></p>
+
+<p>At the urging of Frank, Amy quickly stuffed the remaining pistachios
+in her pockets while he readied his evaluator. The display showed
+some large integer value, that decreased as he pushed the buttons on
+the console.  Finally, he pushed the large red button and two parens
+started glowing on either side of them &hellip; and they disappeared.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Gigasquid</span></span>
+
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/hitchhikers-guide-to-clojure-part-2/" title="Previous Post: Hitchhiker's Guide to Clojure - Part 2">&laquo; Hitchhiker's Guide to Clojure - Part 2</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Chapters</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/hitchhikers-guide-to-clojure/">Hitchhiker's Guide to Clojure</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/hitchhikers-guide-to-clojure-part-2/">Hitchhiker's Guide to Clojure - Part 2</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/hitchhikers-guide-to-clojure-part-3/">Hitchhiker's Guide to Clojure - Part 3</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Gigasquid -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
