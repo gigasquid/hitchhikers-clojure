@@ -2,7 +2,7 @@
 layout: post
 title: "Hitchhiker's Guide to Clojure - Part 3"
 date: 2014-02-01 13:48
-comments: false
+comments: true
 ---
 
 Amy and Frank fled down the stairs from her office and met an
@@ -173,9 +173,9 @@ conversing with human, animals, and other Clojure-based life forms._
       (>! listen-chan
           (str "You said: "(<! talk-chan)
                 " " "Do you have any Abalone?" ))))
-(>!! talk-to-otters-chan "Hello otters")
-(>!! talk-to-otters-chan "Do you know anything about the world ending?")
-(>!! talk-to-otters-chan "Also, you are really fuzzy and cute.")
+(>!! talk-chan "Hello otters")
+(>!! talk-chan "Do you know anything about the world ending?")
+(>!! talk-chan "Also, you are really fuzzy and cute.")
  
 ;; (This prints out in the REPL as you talk to the otters)
 You said: Hello otters Do you have any Abalone?

@@ -76,6 +76,9 @@ they peered out the window, they &hellip;">
     
       <p class="meta">
         
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://gigasquid.github.io/hitchhikers-clojure">Comments</a>
+        
       </p>
     
   </header>
@@ -290,9 +293,9 @@ conversing with human, animals, and other Clojure-based life forms.</em></p>
 </span><span class='line'>      <span class="p">(</span><span class="nf">&gt;!</span> <span class="nv">listen-chan</span>
 </span><span class='line'>          <span class="p">(</span><span class="nb">str </span><span class="s">&quot;You said: &quot;</span><span class="p">(</span><span class="nf">&lt;!</span> <span class="nv">talk-chan</span><span class="p">)</span>
 </span><span class='line'>                <span class="s">&quot; &quot;</span> <span class="s">&quot;Do you have any Abalone?&quot;</span> <span class="p">))))</span>
-</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Hello otters&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Do you know anything about the world ending?&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Also, you are really fuzzy and cute.&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-chan</span> <span class="s">&quot;Hello otters&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-chan</span> <span class="s">&quot;Do you know anything about the world ending?&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-chan</span> <span class="s">&quot;Also, you are really fuzzy and cute.&quot;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1">;; (This prints out in the REPL as you talk to the otters)</span>
 </span><span class='line'><span class="nv">You</span> <span class="nv">said</span><span class="err">:</span> <span class="nv">Hello</span> <span class="nv">otters</span> <span class="nv">Do</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">any</span> <span class="nv">Abalone?</span>
@@ -347,6 +350,12 @@ around and sucked them down into the ground.</p>
   </footer>
 </article>
 
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
 </div>
 
 <aside class="sidebar">
@@ -387,6 +396,22 @@ around and sucked them down into the ground.</p>
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'hitchhikersclojure';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-3/';
+        var disqus_url = 'http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-3/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

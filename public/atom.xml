@@ -4,7 +4,7 @@
   <title><![CDATA[Hitchhiker's Guide to Clojure]]></title>
   <link href="http://gigasquid.github.io/hitchhikers-clojure/atom.xml" rel="self"/>
   <link href="http://gigasquid.github.io/hitchhikers-clojure/"/>
-  <updated>2014-02-16T14:50:01-05:00</updated>
+  <updated>2014-02-16T16:22:28-05:00</updated>
   <id>http://gigasquid.github.io/hitchhikers-clojure/</id>
   <author>
     <name><![CDATA[Gigasquid]]></name>
@@ -605,9 +605,9 @@ conversing with human, animals, and other Clojure-based life forms.</em></p>
 </span><span class='line'>      <span class="p">(</span><span class="nf">&gt;!</span> <span class="nv">listen-chan</span>
 </span><span class='line'>          <span class="p">(</span><span class="nb">str </span><span class="s">&quot;You said: &quot;</span><span class="p">(</span><span class="nf">&lt;!</span> <span class="nv">talk-chan</span><span class="p">)</span>
 </span><span class='line'>                <span class="s">&quot; &quot;</span> <span class="s">&quot;Do you have any Abalone?&quot;</span> <span class="p">))))</span>
-</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Hello otters&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Do you know anything about the world ending?&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-to-otters-chan</span> <span class="s">&quot;Also, you are really fuzzy and cute.&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-chan</span> <span class="s">&quot;Hello otters&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-chan</span> <span class="s">&quot;Do you know anything about the world ending?&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="p">(</span><span class="nf">&gt;!!</span> <span class="nv">talk-chan</span> <span class="s">&quot;Also, you are really fuzzy and cute.&quot;</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1">;; (This prints out in the REPL as you talk to the otters)</span>
 </span><span class='line'><span class="nv">You</span> <span class="nv">said</span><span class="err">:</span> <span class="nv">Hello</span> <span class="nv">otters</span> <span class="nv">Do</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">any</span> <span class="nv">Abalone?</span>
