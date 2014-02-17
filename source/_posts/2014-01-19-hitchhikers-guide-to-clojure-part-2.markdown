@@ -2,7 +2,7 @@
 layout: post
 title: "Hitchhiker's Guide to Clojure - Part 2"
 date: 2014-02-02 21:20
-comments: true
+comments: false
 ---
 
 Amy and Frank were hurtled quite rapidly through time and space after
