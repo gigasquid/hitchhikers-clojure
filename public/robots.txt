@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://gigasquid.github.io/hitchhikers-clojure/sitemap.xml 
+Sitemap: http://gigasquid.github.io//github/sitemap.xml 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Hitchhiker's Guide to Clojure]]></title>
-  <link href="http://gigasquid.github.io/hitchhikers-clojure/atom.xml" rel="self"/>
-  <link href="http://gigasquid.github.io/hitchhikers-clojure/"/>
-  <updated>2014-04-20T21:32:39-04:00</updated>
-  <id>http://gigasquid.github.io/hitchhikers-clojure/</id>
+  <link href="http://gigasquid.github.io//github/atom.xml" rel="self"/>
+  <link href="http://gigasquid.github.io//github/"/>
+  <updated>2014-04-20T21:39:40-04:00</updated>
+  <id>http://gigasquid.github.io//github/</id>
   <author>
     <name><![CDATA[Gigasquid]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hitchhiker's Guide to Clojure]]></title>
-    <link href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure/"/>
+    <link href="http://gigasquid.github.io//github/blog/hitchhikers-guide-to-clojure/"/>
     <updated>2014-02-03T19:33:00-05:00</updated>
-    <id>http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure</id>
+    <id>http://gigasquid.github.io//github/blog/hitchhikers-guide-to-clojure</id>
     <content type="html"><![CDATA[<p><img src="http://farm6.staticflickr.com/5480/12258585125_36e8fdee1e.jpg"></p>
 
 <p><em>The following is a cautionary example of the unpredictable
@@ -195,9 +195,9 @@ started glowing on either side of them &hellip; and they disappeared.</p>
   
   <entry>
     <title type="html"><![CDATA[Hitchhiker's Guide to Clojure - Part 2]]></title>
-    <link href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-2/"/>
+    <link href="http://gigasquid.github.io//github/blog/hitchhikers-guide-to-clojure-part-2/"/>
     <updated>2014-02-02T21:20:00-05:00</updated>
-    <id>http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-2</id>
+    <id>http://gigasquid.github.io//github/blog/hitchhikers-guide-to-clojure-part-2</id>
     <content type="html"><![CDATA[<p>Amy and Frank were hurtled quite rapidly through time and space after
 attaching themselves to a transaction headed through the
 <a href="http://docs.datomic.com/transactions.html">Datomic Transactor</a>. From
@@ -393,9 +393,9 @@ we need to see the otters.&rdquo;</p>
   
   <entry>
     <title type="html"><![CDATA[Hitchhiker's Guide to Clojure - Part 3]]></title>
-    <link href="http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-3/"/>
+    <link href="http://gigasquid.github.io//github/blog/hitchhikers-guide-to-clojure-part-3/"/>
     <updated>2014-02-01T13:48:00-05:00</updated>
-    <id>http://gigasquid.github.io/hitchhikers-clojure/blog/hitchhikers-guide-to-clojure-part-3</id>
+    <id>http://gigasquid.github.io//github/blog/hitchhikers-guide-to-clojure-part-3</id>
     <content type="html"><![CDATA[<p>Amy and Frank fled down the stairs from her office and met an
 unexpected obstacle to their exit, a locked door.  As
 they peered out the window, they saw yesterday&rsquo;s Amy pull up in the
