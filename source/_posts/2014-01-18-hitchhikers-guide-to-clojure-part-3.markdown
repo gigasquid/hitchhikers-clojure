@@ -99,7 +99,7 @@ one of their agents was inadvertently
 required a few extra Abalone shells to straighten out.
 
 Frank opened his pack and handed his evaluator to Amy to hold
-while fished out four mini-marshmallows.  He gave two to Amy and then
+while he fished out four mini-marshmallows.  He gave two to Amy and then
 proceeded to put one in his ear and the other in his mouth.  More
 remarkably still, he appeared to be speaking with the otters.
 
